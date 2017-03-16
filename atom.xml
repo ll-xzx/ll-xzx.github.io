@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>战吧</title>
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ll-xzx.github.io/"/>
-  <updated>2017-03-16T10:00:45.353Z</updated>
+  <updated>2017-03-16T10:50:39.668Z</updated>
   <id>https://ll-xzx.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://ll-xzx.github.io/2017/03/15/%E4%BB%A3%E7%A0%81review-20170315/"/>
     <id>https://ll-xzx.github.io/2017/03/15/代码review-20170315/</id>
     <published>2017-03-15T11:04:07.000Z</published>
-    <updated>2017-03-16T10:00:45.353Z</updated>
+    <updated>2017-03-16T10:50:39.668Z</updated>
     
     <summary type="html">
     
