@@ -3,16 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[代码review-20170315]]></title>
-      <url>%2F2017%2F03%2F15%2F%E4%BB%A3%E7%A0%81review-20170315%2F</url>
-      <content type="text"><![CDATA[promoter 江峰很多无用的注释1234567891011121314151617181920public function show(Request $request )&#123; $id = intval($request-&gt;input(&apos;id&apos;)); $keyword = trim($request-&gt;input(&apos;search_key&apos;)); $limit = intval($request-&gt;input(&apos;limit&apos;))?intval($request-&gt;input(&apos;limit&apos;)):10; #$id = intval($id); if( $id )&#123; #$retcode = $this -&gt; cr -&gt; getOrderList( $id , $limit); #$limit = 9; $data = App::make(&apos;CompanyRepository&apos;)-&gt;getOrderList( $id , $keyword ,$limit); if($data)&#123; return Helper::JsonResponse( 200 , &quot;请求成功&quot; , $data, $request-&gt;input(&apos;callback&apos;) ); &#125;else&#123; return Helper::JsonResponse( 2001 , &quot;没有数据&quot; ,&apos;&apos;, $request-&gt;input(&apos;callback&apos;) ); &#125; #return $data-&gt;toarray(); &#125; return Helper::JsonResponse( 1001 , &quot;缺少参数&quot; , &apos;&apos;, $request-&gt;input(&apos;callback&apos;) ); #return response()-&gt;json( $array )-&gt;setCallback($request-&gt;input(&apos;callback&apos;));&#125; 大量缺少缓存 orderIsPromoter … cli和http在repository层上没法区分代码乱具体代码CompanyRepository 代码复用性问题 getFeeByOrderid、getInfo、getInfoPlus、getProStatus等存在可直接复用关联 命名规范 getInfoPlus：是什么鬼 getInfoByCmsid：check方法使用get关键字 获取Info返回个多维数组，之后还得使用[0]这种下标 checkCompanyInfo 直接使用Request，无复用性、扩展性 createOrderId 生成订单SN逻辑混乱，目测是先插入，再根据自增id生成订单号 getOrderList limit 类型没指定 orderOffline 代码直接echo 、exit sendEmail sleep ? 容易异常代码块没有 try catch ComsettlementRepository 命名规范 check 返回 count 代码复用 getTotalSettle、getTotalByCompanyid等 getFeeCurrentMonthByCompanyid、getTotalFeeByCompanyid、getTotalFeeFromSettle等 getList 传入 array， 除非先看一遍代码，不然天知道该怎么传 _getCompanyPerFee 逻辑只是CompanyRepository的， 为什么放这 getOrderInfo 同上 CstatisticalRepository insert extract 太不友好 命名规范 check 返回 count PromoterRepository 代码复用 isPromoter、getPromoterStatus、checkPromoter等 命名规范 check 返回 info changeLockStatus 应该是 private 吧 UsersettleRepository 命名规范问题， 同上 将来 加入action层，处理业务逻辑，可同时调用多个repository，减少各个repository、MODEL 的耦合性]]></content>
-    </entry>
-
-    
-    <entry>
       <title><![CDATA[代码review-20170317]]></title>
-      <url>%2F2017%2F03%2F15%2F%E4%BB%A3%E7%A0%81review-20170317%2F</url>
-      <content type="text"><![CDATA[games 5.2 庆禄方法注释规范化， 例如：12345678/** * [newsListType description] * @param [type] $channel_id [description] * @param string $cate [description] * @return [type] [description] * @date 2017-03-17 * @author liule1 */ 缺少缓存 news_model.searchGameListByKeyword search_model.searchGame news_model.getCardListByKeyword … 具体代码news_model 代码复用性问题 getFeeByOrderid、getInfo、getInfoPlus、getProStatus等存在可直接复用关联 命名规范 searchGameListByKeyword， 游戏联想怎么能用search 清理无效注释 格式化代码 page_array 减少 global news 命名规范 searchGame 游戏联想 rss 命名规范 common_search 闹呢，这命名]]></content>
+      <url>%2F2017%2F03%2F17%2F%E4%BB%A3%E7%A0%81review-20170317%2F</url>
+      <content type="text"><![CDATA[games 5.2 庆禄方法注释规范化， 例如：12345678/** * [newsListType description] * @param [type] $channel_id [description] * @param string $cate [description] * @return [type] [description] * @date 2017-03-17 * @author liule1 */ 缺少缓存 news_model.searchGameListByKeyword search_model.searchGame news_model.getCardListByKeyword … 具体代码news_model 命名规范 searchGameListByKeyword， 游戏联想怎么能用search 清理无效注释 格式化代码 page_array 减少 global news 命名规范 searchGame 游戏联想 rss 命名规范 common_search 闹呢，这命名]]></content>
     </entry>
 
     
@@ -20,6 +13,13 @@
       <title><![CDATA[laravel-queue]]></title>
       <url>%2F2017%2F03%2F15%2Flaravel-queue%2F</url>
       <content type="text"><![CDATA[testxxxx]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[代码review-20170315]]></title>
+      <url>%2F2017%2F03%2F15%2F%E4%BB%A3%E7%A0%81review-20170315%2F</url>
+      <content type="text"><![CDATA[promoter 江峰很多无用的注释1234567891011121314151617181920public function show(Request $request )&#123; $id = intval($request-&gt;input(&apos;id&apos;)); $keyword = trim($request-&gt;input(&apos;search_key&apos;)); $limit = intval($request-&gt;input(&apos;limit&apos;))?intval($request-&gt;input(&apos;limit&apos;)):10; #$id = intval($id); if( $id )&#123; #$retcode = $this -&gt; cr -&gt; getOrderList( $id , $limit); #$limit = 9; $data = App::make(&apos;CompanyRepository&apos;)-&gt;getOrderList( $id , $keyword ,$limit); if($data)&#123; return Helper::JsonResponse( 200 , &quot;请求成功&quot; , $data, $request-&gt;input(&apos;callback&apos;) ); &#125;else&#123; return Helper::JsonResponse( 2001 , &quot;没有数据&quot; ,&apos;&apos;, $request-&gt;input(&apos;callback&apos;) ); &#125; #return $data-&gt;toarray(); &#125; return Helper::JsonResponse( 1001 , &quot;缺少参数&quot; , &apos;&apos;, $request-&gt;input(&apos;callback&apos;) ); #return response()-&gt;json( $array )-&gt;setCallback($request-&gt;input(&apos;callback&apos;));&#125; 大量缺少缓存 orderIsPromoter … cli和http在repository层上没法区分代码乱具体代码CompanyRepository 代码复用性问题 getFeeByOrderid、getInfo、getInfoPlus、getProStatus等存在可直接复用关联 命名规范 getInfoPlus：是什么鬼 getInfoByCmsid：check方法使用get关键字 获取Info返回个多维数组，之后还得使用[0]这种下标 checkCompanyInfo 直接使用Request，无复用性、扩展性 createOrderId 生成订单SN逻辑混乱，目测是先插入，再根据自增id生成订单号 getOrderList limit 类型没指定 orderOffline 代码直接echo 、exit sendEmail sleep ? 容易异常代码块没有 try catch ComsettlementRepository 命名规范 check 返回 count 代码复用 getTotalSettle、getTotalByCompanyid等 getFeeCurrentMonthByCompanyid、getTotalFeeByCompanyid、getTotalFeeFromSettle等 getList 传入 array， 除非先看一遍代码，不然天知道该怎么传 _getCompanyPerFee 逻辑只是CompanyRepository的， 为什么放这 getOrderInfo 同上 CstatisticalRepository insert extract 太不友好 命名规范 check 返回 count PromoterRepository 代码复用 isPromoter、getPromoterStatus、checkPromoter等 命名规范 check 返回 info changeLockStatus 应该是 private 吧 UsersettleRepository 命名规范问题， 同上 将来 加入action层，处理业务逻辑，可同时调用多个repository，减少各个repository、MODEL 的耦合性]]></content>
     </entry>
 
     
