@@ -45,7 +45,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工作,日常,新浪游戏," />
+  <meta name="keywords" content="新浪游戏,工作,日常," />
 
 
 
@@ -63,16 +63,16 @@
 
 
 
-<meta name="description" content="promoter">
+<meta name="description" content="games 5.2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码review-20170315">
-<meta property="og:url" content="https://ll-xzx.github.io/2017/03/15/代码review-20170315/index.html">
+<meta property="og:title" content="代码review-20170317">
+<meta property="og:url" content="https://ll-xzx.github.io/代码review-20170317/index.html">
 <meta property="og:site_name" content="战吧">
-<meta property="og:description" content="promoter">
-<meta property="og:updated_time" content="2017-03-16T10:50:39.668Z">
+<meta property="og:description" content="games 5.2">
+<meta property="og:updated_time" content="2017-03-20T11:52:33.416Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码review-20170315">
-<meta name="twitter:description" content="promoter">
+<meta name="twitter:title" content="代码review-20170317">
+<meta name="twitter:description" content="games 5.2">
 
 
 
@@ -100,13 +100,13 @@
 
 
 
-  <link rel="canonical" href="https://ll-xzx.github.io/2017/03/15/代码review-20170315/"/>
+  <link rel="canonical" href="https://ll-xzx.github.io/代码review-20170317/"/>
 
 
 
 
 
-  <title> 代码review-20170315 | 战吧 </title>
+  <title> 代码review-20170317 | 战吧 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -289,7 +289,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://ll-xzx.github.io/2017/03/15/代码review-20170315/">
+    <link itemprop="mainEntityOfPage" href="https://ll-xzx.github.io/代码review-20170317/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="战吧">
@@ -310,7 +310,7 @@
             
             
               
-                代码review-20170315
+                代码review-20170317
               
             
           </h1>
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T19:04:07+08:00">
-                2017-03-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-17T15:00:00+08:00">
+                2017-03-17
               </time>
             
 
@@ -377,8 +377,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/15/代码review-20170315/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/15/代码review-20170315/" itemprop="commentCount"></span>
+                <a href="/代码review-20170317/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="代码review-20170317/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,95 +409,39 @@
       
 
       
-        <h1 id="promoter"><a href="#promoter" class="headerlink" title="promoter"></a>promoter</h1><a id="more"></a>
-<h2 id="江峰"><a href="#江峰" class="headerlink" title="江峰"></a>江峰</h2><h3 id="很多无用的注释"><a href="#很多无用的注释" class="headerlink" title="很多无用的注释"></a>很多无用的注释</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public function show(Request $request )</div><div class="line">&#123;</div><div class="line">    $id =  intval($request-&gt;input(&apos;id&apos;));</div><div class="line">    $keyword =  trim($request-&gt;input(&apos;search_key&apos;));</div><div class="line">    $limit =  intval($request-&gt;input(&apos;limit&apos;))?intval($request-&gt;input(&apos;limit&apos;)):10;</div><div class="line">    #$id = intval($id);</div><div class="line">    if( $id )&#123;</div><div class="line">        #$retcode = $this -&gt; cr -&gt; getOrderList( $id , $limit);</div><div class="line">        #$limit = 9;</div><div class="line">        $data = App::make(&apos;CompanyRepository&apos;)-&gt;getOrderList( $id , $keyword ,$limit);</div><div class="line">        if($data)&#123;</div><div class="line">            return Helper::JsonResponse( 200 , &quot;请求成功&quot; , $data,  $request-&gt;input(&apos;callback&apos;)  );</div><div class="line">        &#125;else&#123;</div><div class="line">            return Helper::JsonResponse( 2001 , &quot;没有数据&quot; ,&apos;&apos;,  $request-&gt;input(&apos;callback&apos;)  );</div><div class="line">        &#125;</div><div class="line">        #return $data-&gt;toarray();</div><div class="line">    &#125;</div><div class="line">    return Helper::JsonResponse( 1001 , &quot;缺少参数&quot; , &apos;&apos;,  $request-&gt;input(&apos;callback&apos;)  );</div><div class="line">    #return response()-&gt;json( $array )-&gt;setCallback($request-&gt;input(&apos;callback&apos;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><h3 id="大量缺少缓存"><a href="#大量缺少缓存" class="headerlink" title="大量缺少缓存"></a>大量缺少缓存</h3><ul>
-<li>orderIsPromoter</li>
+        <p>games 5.2</p>
+<a id="more"></a>
+<h1 id="庆禄"><a href="#庆禄" class="headerlink" title="庆禄"></a>庆禄</h1><h2 id="方法注释规范化，-例如："><a href="#方法注释规范化，-例如：" class="headerlink" title="方法注释规范化， 例如："></a>方法注释规范化， 例如：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * [newsListType description]</div><div class="line"> * @param  [type]     $channel_id [description]</div><div class="line"> * @param  string     $cate       [description]</div><div class="line"> * @return [type]                 [description]</div><div class="line"> * @date   2017-03-17</div><div class="line"> * @author liule1</div><div class="line"> */</div></pre></td></tr></table></figure>
+<h2 id="缺少缓存"><a href="#缺少缓存" class="headerlink" title="缺少缓存"></a>缺少缓存</h2><ul>
+<li>news_model.searchGameListByKeyword</li>
+<li>search_model.searchGame</li>
+<li>news_model.getCardListByKeyword</li>
 <li>…</li>
 </ul>
-<h3 id="cli和http在repository层上没法区分"><a href="#cli和http在repository层上没法区分" class="headerlink" title="cli和http在repository层上没法区分"></a>cli和http在repository层上没法区分</h3><h3 id="代码乱"><a href="#代码乱" class="headerlink" title="代码乱"></a>代码乱</h3><h3 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h3><h4 id="CompanyRepository"><a href="#CompanyRepository" class="headerlink" title="CompanyRepository"></a>CompanyRepository</h4><ul>
-<li>代码复用性问题<ul>
-<li>getFeeByOrderid、getInfo、getInfoPlus、getProStatus等存在可直接复用关联</li>
-</ul>
-</li>
+<h2 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h2><h3 id="news-model"><a href="#news-model" class="headerlink" title="news_model"></a>news_model</h3><ul>
 <li>命名规范<ul>
-<li>getInfoPlus：是什么鬼</li>
-<li>getInfoByCmsid：check方法使用get关键字</li>
+<li>searchGameListByKeyword， 游戏联想怎么能用search</li>
 </ul>
 </li>
-<li>获取Info返回个多维数组，之后还得使用[0]这种下标</li>
-<li>checkCompanyInfo<ul>
-<li>直接使用Request，无复用性、扩展性</li>
-</ul>
-</li>
-<li>createOrderId<ul>
-<li><strong> 生成订单SN逻辑混乱</strong>，目测是先插入，再根据自增id生成订单号</li>
-</ul>
-</li>
-<li>getOrderList<ul>
-<li>limit 类型没指定</li>
-</ul>
-</li>
-<li>orderOffline<ul>
-<li>代码直接echo 、exit</li>
-</ul>
-</li>
-<li>sendEmail<ul>
-<li>sleep ?</li>
-<li>容易异常代码块没有 try catch</li>
+<li>清理无效注释</li>
+<li>格式化代码</li>
+<li>page_array<ul>
+<li>减少 global</li>
 </ul>
 </li>
 </ul>
-<h4 id="ComsettlementRepository"><a href="#ComsettlementRepository" class="headerlink" title="ComsettlementRepository"></a>ComsettlementRepository</h4><ul>
+<h3 id="news"><a href="#news" class="headerlink" title="news"></a>news</h3><ul>
 <li>命名规范<ul>
-<li>check 返回 count</li>
-</ul>
-</li>
-<li>代码复用<ul>
-<li>getTotalSettle、getTotalByCompanyid等</li>
-<li>getFeeCurrentMonthByCompanyid、getTotalFeeByCompanyid、getTotalFeeFromSettle等</li>
-</ul>
-</li>
-<li>getList 传入 array， 除非先看一遍代码，不然天知道该怎么传</li>
-<li>_getCompanyPerFee<ul>
-<li>逻辑只是CompanyRepository的， 为什么放这</li>
-</ul>
-</li>
-<li>getOrderInfo<ul>
-<li>同上</li>
+<li>searchGame 游戏联想</li>
 </ul>
 </li>
 </ul>
-<h4 id="CstatisticalRepository"><a href="#CstatisticalRepository" class="headerlink" title="CstatisticalRepository"></a>CstatisticalRepository</h4><ul>
-<li>insert<ul>
-<li>extract 太不友好</li>
-</ul>
-</li>
+<h3 id="rss"><a href="#rss" class="headerlink" title="rss"></a>rss</h3><ul>
 <li>命名规范<ul>
-<li>check 返回 count</li>
+<li>common_search 闹呢，这命名</li>
 </ul>
 </li>
 </ul>
-<h4 id="PromoterRepository"><a href="#PromoterRepository" class="headerlink" title="PromoterRepository"></a>PromoterRepository</h4><ul>
-<li>代码复用<ul>
-<li>isPromoter、getPromoterStatus、checkPromoter等</li>
-</ul>
-</li>
-<li>命名规范<ul>
-<li>check 返回 info</li>
-</ul>
-</li>
-<li>changeLockStatus<ul>
-<li>应该是 private 吧</li>
-</ul>
-</li>
-</ul>
-<h4 id="UsersettleRepository"><a href="#UsersettleRepository" class="headerlink" title="UsersettleRepository"></a>UsersettleRepository</h4><ul>
-<li>命名规范问题， 同上</li>
-</ul>
-<h1 id="将来"><a href="#将来" class="headerlink" title="将来"></a>将来</h1><ol>
-<li>加入action层，处理业务逻辑，可同时调用多个repository，减少各个repository、MODEL 的耦合性</li>
-</ol>
 
       
     </div>
@@ -527,11 +471,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/新浪游戏/" rel="tag"># 新浪游戏</a>
+          
             <a href="/tags/工作/" rel="tag"># 工作</a>
           
             <a href="/tags/日常/" rel="tag"># 日常</a>
-          
-            <a href="/tags/新浪游戏/" rel="tag"># 新浪游戏</a>
           
         </div>
       
@@ -544,14 +488,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/laravel-queue/" rel="next" title="laravel-queue">
+                <i class="fa fa-chevron-left"></i> laravel-queue
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/15/laravel-queue/" rel="prev" title="laravel-queue">
-                laravel-queue <i class="fa fa-chevron-right"></i>
+              <a href="/PHP代码审核之路/" rel="prev" title="PHP代码审核之路">
+                PHP代码审核之路 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -578,8 +526,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/15/代码review-20170315/"
-           data-title="代码review-20170315" data-url="https://ll-xzx.github.io/2017/03/15/代码review-20170315/">
+      <div class="ds-thread" data-thread-key="代码review-20170317/"
+           data-title="代码review-20170317" data-url="https://ll-xzx.github.io/代码review-20170317/">
       </div>
     
   </div>
@@ -628,7 +576,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -639,7 +587,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -650,7 +598,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -692,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#promoter"><span class="nav-number">1.</span> <span class="nav-text">promoter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#江峰"><span class="nav-number">1.1.</span> <span class="nav-text">江峰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#很多无用的注释"><span class="nav-number">1.1.1.</span> <span class="nav-text">很多无用的注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大量缺少缓存"><span class="nav-number">1.1.2.</span> <span class="nav-text">大量缺少缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cli和http在repository层上没法区分"><span class="nav-number">1.1.3.</span> <span class="nav-text">cli和http在repository层上没法区分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码乱"><span class="nav-number">1.1.4.</span> <span class="nav-text">代码乱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体代码"><span class="nav-number">1.1.5.</span> <span class="nav-text">具体代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CompanyRepository"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">CompanyRepository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ComsettlementRepository"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">ComsettlementRepository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CstatisticalRepository"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">CstatisticalRepository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PromoterRepository"><span class="nav-number">1.1.5.4.</span> <span class="nav-text">PromoterRepository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UsersettleRepository"><span class="nav-number">1.1.5.5.</span> <span class="nav-text">UsersettleRepository</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将来"><span class="nav-number">2.</span> <span class="nav-text">将来</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#庆禄"><span class="nav-number">1.</span> <span class="nav-text">庆禄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法注释规范化，-例如："><span class="nav-number">1.1.</span> <span class="nav-text">方法注释规范化， 例如：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺少缓存"><span class="nav-number">1.2.</span> <span class="nav-text">缺少缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体代码"><span class="nav-number">1.3.</span> <span class="nav-text">具体代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#news-model"><span class="nav-number">1.3.1.</span> <span class="nav-text">news_model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#news"><span class="nav-number">1.3.2.</span> <span class="nav-text">news</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rss"><span class="nav-number">1.3.3.</span> <span class="nav-text">rss</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

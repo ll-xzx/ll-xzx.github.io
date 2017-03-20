@@ -45,7 +45,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工作,日常,新浪游戏," />
+  <meta name="keywords" content="新浪游戏,PHP," />
 
 
 
@@ -63,16 +63,16 @@
 
 
 
-<meta name="description" content="games 5.2">
+<meta name="description" content="上周审核了几个同事的代码，发现代码规范用处太小。使用工具进行代码的审核势在必行。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码review-20170317">
-<meta property="og:url" content="https://ll-xzx.github.io/2017/03/17/代码review-20170317/index.html">
+<meta property="og:title" content="PHP代码审核之路">
+<meta property="og:url" content="https://ll-xzx.github.io/PHP代码审核之路/index.html">
 <meta property="og:site_name" content="战吧">
-<meta property="og:description" content="games 5.2">
-<meta property="og:updated_time" content="2017-03-17T08:21:31.464Z">
+<meta property="og:description" content="上周审核了几个同事的代码，发现代码规范用处太小。使用工具进行代码的审核势在必行。">
+<meta property="og:updated_time" content="2017-03-20T11:54:15.640Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码review-20170317">
-<meta name="twitter:description" content="games 5.2">
+<meta name="twitter:title" content="PHP代码审核之路">
+<meta name="twitter:description" content="上周审核了几个同事的代码，发现代码规范用处太小。使用工具进行代码的审核势在必行。">
 
 
 
@@ -100,13 +100,13 @@
 
 
 
-  <link rel="canonical" href="https://ll-xzx.github.io/2017/03/17/代码review-20170317/"/>
+  <link rel="canonical" href="https://ll-xzx.github.io/PHP代码审核之路/"/>
 
 
 
 
 
-  <title> 代码review-20170317 | 战吧 </title>
+  <title> PHP代码审核之路 | 战吧 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -289,7 +289,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://ll-xzx.github.io/2017/03/17/代码review-20170317/">
+    <link itemprop="mainEntityOfPage" href="https://ll-xzx.github.io/PHP代码审核之路/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="战吧">
@@ -310,7 +310,7 @@
             
             
               
-                代码review-20170317
+                PHP代码审核之路
               
             
           </h1>
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-17T15:00:00+08:00">
-                2017-03-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T15:00:00+08:00">
+                2017-03-20
               </time>
             
 
@@ -348,19 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工作/" itemprop="url" rel="index">
-                    <span itemprop="name">工作</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工作/日常/" itemprop="url" rel="index">
-                    <span itemprop="name">日常</span>
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
                   </a>
                 </span>
 
@@ -377,8 +366,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/17/代码review-20170317/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/17/代码review-20170317/" itemprop="commentCount"></span>
+                <a href="/PHP代码审核之路/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="PHP代码审核之路/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,38 +398,15 @@
       
 
       
-        <h1 id="games-5-2"><a href="#games-5-2" class="headerlink" title="games 5.2"></a>games 5.2</h1><a id="more"></a>
-<h2 id="庆禄"><a href="#庆禄" class="headerlink" title="庆禄"></a>庆禄</h2><h3 id="方法注释规范化，-例如："><a href="#方法注释规范化，-例如：" class="headerlink" title="方法注释规范化， 例如："></a>方法注释规范化， 例如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * [newsListType description]</div><div class="line"> * @param  [type]     $channel_id [description]</div><div class="line"> * @param  string     $cate       [description]</div><div class="line"> * @return [type]                 [description]</div><div class="line"> * @date   2017-03-17</div><div class="line"> * @author liule1</div><div class="line"> */</div></pre></td></tr></table></figure>
-<h3 id="缺少缓存"><a href="#缺少缓存" class="headerlink" title="缺少缓存"></a>缺少缓存</h3><ul>
-<li>news_model.searchGameListByKeyword</li>
-<li>search_model.searchGame</li>
-<li>news_model.getCardListByKeyword</li>
-<li>…</li>
-</ul>
-<h3 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h3><h4 id="news-model"><a href="#news-model" class="headerlink" title="news_model"></a>news_model</h4><ul>
-<li>命名规范<ul>
-<li>searchGameListByKeyword， 游戏联想怎么能用search</li>
-</ul>
-</li>
-<li>清理无效注释</li>
-<li>格式化代码</li>
-<li>page_array<ul>
-<li>减少 global</li>
-</ul>
-</li>
-</ul>
-<h4 id="news"><a href="#news" class="headerlink" title="news"></a>news</h4><ul>
-<li>命名规范<ul>
-<li>searchGame 游戏联想</li>
-</ul>
-</li>
-</ul>
-<h4 id="rss"><a href="#rss" class="headerlink" title="rss"></a>rss</h4><ul>
-<li>命名规范<ul>
-<li>common_search 闹呢，这命名</li>
-</ul>
-</li>
-</ul>
+        <p>上周审核了几个同事的代码，发现代码规范用处太小。使用工具进行代码的审核势在必行。</p>
+<a id="more"></a>
+<h1 id="寻觅"><a href="#寻觅" class="headerlink" title="寻觅"></a>寻觅</h1><h2 id="Rietveld"><a href="#Rietveld" class="headerlink" title="Rietveld"></a>Rietveld</h2><p>谷歌出品工具，很犀利，免费开源。PYTHON + Django， 使用Google App Engine。</p>
+<h2 id="Gerrit"><a href="#Gerrit" class="headerlink" title="Gerrit"></a>Gerrit</h2><p>免费开源，网页管理界面，GIT管理。</p>
+<h2 id="Crucible"><a href="#Crucible" class="headerlink" title="Crucible"></a>Crucible</h2><p>Atlassian公司出品，收费。暂时不考虑。</p>
+<h1 id="初见"><a href="#初见" class="headerlink" title="初见"></a>初见</h1><p>LINUX 虚拟机<br>CentOS7</p>
+<h2 id="Rietveld-1"><a href="#Rietveld-1" class="headerlink" title="Rietveld"></a>Rietveld</h2><h3 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h3><ol>
+<li>首先就得科学上网，见另一篇 《<a href="/linux科学上网/">linux科学上网</a>》</li>
+</ol>
 
       
     </div>
@@ -470,11 +436,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/工作/" rel="tag"># 工作</a>
-          
-            <a href="/tags/日常/" rel="tag"># 日常</a>
-          
             <a href="/tags/新浪游戏/" rel="tag"># 新浪游戏</a>
+          
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
           
         </div>
       
@@ -487,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/15/laravel-queue/" rel="next" title="laravel-queue">
-                <i class="fa fa-chevron-left"></i> laravel-queue
+              <a href="/代码review-20170317/" rel="next" title="代码review-20170317">
+                <i class="fa fa-chevron-left"></i> 代码review-20170317
               </a>
             
           </div>
@@ -496,6 +460,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/linux科学上网/" rel="prev" title="linux科学上网">
+                linux科学上网 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -521,8 +489,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/17/代码review-20170317/"
-           data-title="代码review-20170317" data-url="https://ll-xzx.github.io/2017/03/17/代码review-20170317/">
+      <div class="ds-thread" data-thread-key="PHP代码审核之路/"
+           data-title="PHP代码审核之路" data-url="https://ll-xzx.github.io/PHP代码审核之路/">
       </div>
     
   </div>
@@ -571,7 +539,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -582,7 +550,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -593,7 +561,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -635,7 +603,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#games-5-2"><span class="nav-number">1.</span> <span class="nav-text">games 5.2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#庆禄"><span class="nav-number">1.1.</span> <span class="nav-text">庆禄</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法注释规范化，-例如："><span class="nav-number">1.1.1.</span> <span class="nav-text">方法注释规范化， 例如：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺少缓存"><span class="nav-number">1.1.2.</span> <span class="nav-text">缺少缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体代码"><span class="nav-number">1.1.3.</span> <span class="nav-text">具体代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#news-model"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">news_model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#news"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">news</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rss"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">rss</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#寻觅"><span class="nav-number">1.</span> <span class="nav-text">寻觅</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Rietveld"><span class="nav-number">1.1.</span> <span class="nav-text">Rietveld</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gerrit"><span class="nav-number">1.2.</span> <span class="nav-text">Gerrit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Crucible"><span class="nav-number">1.3.</span> <span class="nav-text">Crucible</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初见"><span class="nav-number">2.</span> <span class="nav-text">初见</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Rietveld-1"><span class="nav-number">2.1.</span> <span class="nav-text">Rietveld</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建"><span class="nav-number">2.1.1.</span> <span class="nav-text">搭建</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
